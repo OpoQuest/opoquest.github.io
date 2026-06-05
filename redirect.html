@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpoQuest</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 24px;
+    }
+    .card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 40px 32px;
+      max-width: 420px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+    .logo {
+      width: 160px;
+      margin: 0 auto 8px;
+      display: block;
+    }
+    .tagline {
+      color: #1E3A5F;
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 32px;
+    }
+    .title {
+      color: #1E3A5F;
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+    .subtitle {
+      color: #64748B;
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 32px;
+    }
+    .btn-primary {
+      display: inline-block;
+      background-color: #1E3A5F;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 16px 32px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      width: 100%;
+      margin-bottom: 12px;
+    }
+    .btn-secondary {
+      display: inline-block;
+      color: #64748B;
+      font-size: 13px;
+      text-decoration: none;
+      margin-top: 8px;
+    }
+    .footer {
+      color: #aaaaaa;
+      font-size: 12px;
+      margin-top: 32px;
+    }
+  </style>
+  <script>
+    function getParams() {
+      const hash = window.location.hash.substring(1);
+      const query = window.location.search.substring(1);
+      const params = {};
+      (hash || query).split('&').forEach(p => {
+        const [k, v] = p.split('=');
+        if (k) params[decodeURIComponent(k)] = decodeURIComponent(v || '');
+      });
+      return params;
+    }
+
+    window.onload = function() {
+      const params = getParams();
+      const type = params['type'];
+      const deepLink = 'com.opoquest.app://auth?' + 
+        (window.location.hash.substring(1) || window.location.search.substring(1));
+
+      // Intentar abrir la app automáticamente
+      window.location.href = deepLink;
+
+      // Actualizar el contenido según el tipo
+      const title = document.getElementById('title');
+      const subtitle = document.getElementById('subtitle');
+      const btnApp = document.getElementById('btn-app');
+
+      if (type === 'recovery') {
+        title.textContent = 'Restablecer contraseña';
+        subtitle.textContent = 'Pulsa el botón para abrir OpoQuest y crear tu nueva contraseña.';
+        btnApp.textContent = 'Abrir OpoQuest';
+      } else {
+        title.textContent = '¡Cuenta confirmada!';
+        subtitle.textContent = 'Tu cuenta ha sido verificada. Pulsa el botón para abrir OpoQuest e iniciar sesión.';
+        btnApp.textContent = 'Abrir OpoQuest';
+      }
+
+      btnApp.href = deepLink;
+    };
+  </script>
+</head>
+<body>
+  <div class="card">
+    <img 
+      src="https://otpbsxzulcweqwnoqdtw.supabase.co/storage/v1/object/public/Assets/loginv2.png" 
+      alt="OpoQuest" 
+      class="logo"
+    />
+    <p class="tagline">Tu oposición. Tu misión.</p>
+
+    <h1 class="title" id="title">Abriendo OpoQuest...</h1>
+    <p class="subtitle" id="subtitle">
+      Redirigiendo a la aplicación...
+    </p>
+
+    <a href="#" class="btn-primary" id="btn-app">Abrir OpoQuest</a>
+
+    <a 
+      href="https://play.google.com/store/apps/details?id=com.opoquest.app" 
+      class="btn-secondary"
+      target="_blank"
+    >
+      ¿No tienes la app? Descárgala en Google Play
+    </a>
+
+    <p class="footer">© 2026 OpoQuest · Preparación de oposiciones C1 AGE</p>
+  </div>
+</body>
+</html>
