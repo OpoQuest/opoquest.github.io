@@ -84,36 +84,40 @@
     return params;
   }
   window.onload = function() {
-    const params = getParams();
-    const type = params['type'];
-    const deepLink = 'com.opoquest.app://auth?' + 
-      (window.location.hash.substring(1) || window.location.search.substring(1));
-    
-    const title = document.getElementById('title');
-    const subtitle = document.getElementById('subtitle');
-    const btnApp = document.getElementById('btn-app');
-    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  const params = getParams();
+  const type = params['type'];
+  const deepLink = 'com.opoquest.app://auth?' + 
+    (window.location.hash.substring(1) || window.location.search.substring(1));
+  
+  const title = document.getElementById('title');
+  const subtitle = document.getElementById('subtitle');
+  const btnApp = document.getElementById('btn-app');
+  const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
-    if (type === 'recovery') {
-      title.textContent = 'Restablecer contraseña';
-      subtitle.textContent = isMobile 
-        ? 'Pulsa el botón para abrir OpoQuest y crear tu nueva contraseña.'
-        : 'Abre este enlace desde tu móvil para restablecer la contraseña en la app.';
-    } else {
-      title.textContent = '¡Cuenta confirmada!';
-      subtitle.textContent = isMobile
-        ? 'Tu cuenta ha sido verificada. Pulsa el botón para abrir OpoQuest e iniciar sesión.'
-        : 'Tu cuenta ha sido verificada. Abre OpoQuest en tu móvil e inicia sesión.';
-    }
-
+  if (type === 'recovery') {
+    title.textContent = 'Restablecer contraseña';
     if (isMobile) {
+      subtitle.textContent = 'Pulsa el botón para abrir OpoQuest y crear tu nueva contraseña.';
       window.location.href = deepLink;
       btnApp.href = deepLink;
       btnApp.textContent = 'Abrir OpoQuest';
     } else {
+      subtitle.textContent = 'Para restablecer tu contraseña, abre este enlace desde el móvil donde tienes instalada la app OpoQuest.';
       btnApp.style.display = 'none';
     }
-  };
+  } else {
+    title.textContent = '¡Cuenta confirmada!';
+    if (isMobile) {
+      subtitle.textContent = 'Tu cuenta ha sido verificada. Pulsa el botón para abrir OpoQuest e iniciar sesión.';
+      window.location.href = deepLink;
+      btnApp.href = deepLink;
+      btnApp.textContent = 'Abrir OpoQuest';
+    } else {
+      subtitle.textContent = 'Tu cuenta ha sido verificada. Abre OpoQuest en tu móvil e inicia sesión.';
+      btnApp.style.display = 'none';
+    }
+  }
+};
 </script>
 </head>
 <body>
