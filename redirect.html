@@ -73,44 +73,48 @@
     }
   </style>
   <script>
-    function getParams() {
-      const hash = window.location.hash.substring(1);
-      const query = window.location.search.substring(1);
-      const params = {};
-      (hash || query).split('&').forEach(p => {
-        const [k, v] = p.split('=');
-        if (k) params[decodeURIComponent(k)] = decodeURIComponent(v || '');
-      });
-      return params;
+  function getParams() {
+    const hash = window.location.hash.substring(1);
+    const query = window.location.search.substring(1);
+    const params = {};
+    (hash || query).split('&').forEach(p => {
+      const [k, v] = p.split('=');
+      if (k) params[decodeURIComponent(k)] = decodeURIComponent(v || '');
+    });
+    return params;
+  }
+  window.onload = function() {
+    const params = getParams();
+    const type = params['type'];
+    const deepLink = 'com.opoquest.app://auth?' + 
+      (window.location.hash.substring(1) || window.location.search.substring(1));
+    
+    const title = document.getElementById('title');
+    const subtitle = document.getElementById('subtitle');
+    const btnApp = document.getElementById('btn-app');
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+    if (type === 'recovery') {
+      title.textContent = 'Restablecer contraseña';
+      subtitle.textContent = isMobile 
+        ? 'Pulsa el botón para abrir OpoQuest y crear tu nueva contraseña.'
+        : 'Abre este enlace desde tu móvil para restablecer la contraseña en la app.';
+    } else {
+      title.textContent = '¡Cuenta confirmada!';
+      subtitle.textContent = isMobile
+        ? 'Tu cuenta ha sido verificada. Pulsa el botón para abrir OpoQuest e iniciar sesión.'
+        : 'Tu cuenta ha sido verificada. Abre OpoQuest en tu móvil e inicia sesión.';
     }
 
-    window.onload = function() {
-      const params = getParams();
-      const type = params['type'];
-      const deepLink = 'com.opoquest.app://auth?' + 
-        (window.location.hash.substring(1) || window.location.search.substring(1));
-
-      // Intentar abrir la app automáticamente
+    if (isMobile) {
       window.location.href = deepLink;
-
-      // Actualizar el contenido según el tipo
-      const title = document.getElementById('title');
-      const subtitle = document.getElementById('subtitle');
-      const btnApp = document.getElementById('btn-app');
-
-      if (type === 'recovery') {
-        title.textContent = 'Restablecer contraseña';
-        subtitle.textContent = 'Pulsa el botón para abrir OpoQuest y crear tu nueva contraseña.';
-        btnApp.textContent = 'Abrir OpoQuest';
-      } else {
-        title.textContent = '¡Cuenta confirmada!';
-        subtitle.textContent = 'Tu cuenta ha sido verificada. Pulsa el botón para abrir OpoQuest e iniciar sesión.';
-        btnApp.textContent = 'Abrir OpoQuest';
-      }
-
       btnApp.href = deepLink;
-    };
-  </script>
+      btnApp.textContent = 'Abrir OpoQuest';
+    } else {
+      btnApp.style.display = 'none';
+    }
+  };
+</script>
 </head>
 <body>
   <div class="card">
