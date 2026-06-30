@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eliminar cuenta — OpoQuest</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+      color: #333;
+      line-height: 1.7;
+      background: #fff;
+    }
+    h1 {
+      color: #1E3A5F;
+      font-size: 1.8rem;
+      margin-bottom: 4px;
+    }
+    h2 {
+      color: #1E3A5F;
+      font-size: 1.15rem;
+      margin-top: 40px;
+      margin-bottom: 10px;
+    }
+    h3 {
+      color: #444;
+      font-size: 1rem;
+      margin-top: 28px;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-size: 0.8rem;
+    }
+    p { margin: 0 0 12px; }
+    .meta { color: #666; font-size: 0.9rem; margin-bottom: 40px; }
+    a { color: #1E3A5F; }
+
+    .steps {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 16px;
+      counter-reset: step;
+    }
+    .steps li {
+      counter-increment: step;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 10px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .steps li:last-child { border-bottom: none; }
+    .steps li::before {
+      content: counter(step);
+      min-width: 28px;
+      height: 28px;
+      background: #1E3A5F;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .data-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 16px;
+    }
+    .data-list li {
+      padding: 5px 0 5px 20px;
+      position: relative;
+      color: #c0392b;
+    }
+    .data-list li::before {
+      content: "✕";
+      position: absolute;
+      left: 0;
+      font-size: 0.8rem;
+      top: 7px;
+    }
+
+    .warning {
+      background: #fff5f5;
+      border-left: 4px solid #c0392b;
+      padding: 14px 18px;
+      border-radius: 0 8px 8px 0;
+      margin: 16px 0;
+      color: #7b1e1e;
+      font-size: 0.95rem;
+    }
+
+    .contact-box {
+      background: #f4f7fb;
+      border-radius: 10px;
+      padding: 18px 20px;
+      margin-top: 12px;
+    }
+    .contact-box a {
+      font-weight: 600;
+    }
+
+    .divider {
+      border: none;
+      border-top: 2px dashed #ddd;
+      margin: 52px 0;
+    }
+
+    .lang-badge {
+      display: inline-block;
+      background: #1E3A5F;
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-bottom: 18px;
+      text-transform: uppercase;
+    }
+
+    footer {
+      margin-top: 60px;
+      padding-top: 20px;
+      border-top: 1px solid #e0e0e0;
+      font-size: 0.85rem;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── ESPAÑOL ── -->
+  <div class="lang-badge">🇪🇸 Español</div>
+
+  <h1>Eliminar cuenta — OpoQuest</h1>
+  <p class="meta">Última actualización: julio de 2026</p>
+
+  <h2>Cómo eliminar tu cuenta desde la app</h2>
+  <ol class="steps">
+    <li>Abre la app <strong>OpoQuest</strong></li>
+    <li>Pulsa tu avatar o ve al apartado <strong>Mi Perfil</strong></li>
+    <li>Desplázate hasta el final de la pantalla</li>
+    <li>Pulsa el botón <strong>"Eliminar cuenta"</strong></li>
+    <li>Confirma la acción en el diálogo que aparece</li>
+  </ol>
+
+  <h2>Qué datos se eliminan</h2>
+  <p>Al eliminar tu cuenta se borran de forma permanente:</p>
+  <ul class="data-list">
+    <li>Tu cuenta y credenciales de acceso</li>
+    <li>Tu perfil (nombre de usuario, avatar)</li>
+    <li>Todo tu progreso de estudio</li>
+    <li>Tus estadísticas y porcentajes de acierto</li>
+    <li>Tu racha actual y racha máxima</li>
+    <li>Tu historial de respuestas</li>
+    <li>Tus simulacros y resultados</li>
+  </ul>
+
+  <div class="warning">
+    <strong>⚠ La eliminación es inmediata y permanente.</strong><br>
+    Una vez confirmada, no es posible recuperar la cuenta ni ninguno de sus datos.
+  </div>
+
+  <h2>¿No puedes acceder a la app?</h2>
+  <p>Si no tienes acceso a la aplicación, puedes solicitar la eliminación de tu cuenta por correo electrónico:</p>
+  <div class="contact-box">
+    📧 <a href="mailto:opoquest.app@gmail.com">opoquest.app@gmail.com</a><br>
+    <small>Indica en el asunto: <em>"Solicitud de eliminación de cuenta"</em> y el correo asociado a tu cuenta.</small>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ── ENGLISH ── -->
+  <div class="lang-badge">🇬🇧 English</div>
+
+  <h1>Delete Account — OpoQuest</h1>
+  <p class="meta">Last updated: July 2026</p>
+
+  <h2>How to delete your account from the app</h2>
+  <ol class="steps">
+    <li>Open the <strong>OpoQuest</strong> app</li>
+    <li>Tap your avatar or go to <strong>My Profile</strong></li>
+    <li>Scroll to the bottom of the screen</li>
+    <li>Tap the <strong>"Delete account"</strong> button</li>
+    <li>Confirm the action in the dialog that appears</li>
+  </ol>
+
+  <h2>What data is deleted</h2>
+  <p>When you delete your account, the following is permanently removed:</p>
+  <ul class="data-list">
+    <li>Your account and login credentials</li>
+    <li>Your profile (username, avatar)</li>
+    <li>All your study progress</li>
+    <li>Your statistics and accuracy percentages</li>
+    <li>Your current and maximum streaks</li>
+    <li>Your answer history</li>
+    <li>Your simulations and results</li>
+  </ul>
+
+  <div class="warning">
+    <strong>⚠ Deletion is immediate and permanent.</strong><br>
+    Once confirmed, it is not possible to recover your account or any of its data.
+  </div>
+
+  <h2>Can't access the app?</h2>
+  <p>If you don't have access to the app, you can request account deletion by email:</p>
+  <div class="contact-box">
+    📧 <a href="mailto:opoquest.app@gmail.com">opoquest.app@gmail.com</a><br>
+    <small>Subject: <em>"Account deletion request"</em> — include the email address linked to your account.</small>
+  </div>
+
+  <footer>© 2026 OpoQuest</footer>
+
+</body>
+</html>
