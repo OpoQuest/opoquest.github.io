@@ -1,77 +1,253 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Términos de Uso — OpoQuest</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 20px;
-      color: #333;
-      line-height: 1.6;
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Términos de Uso — OpoQuest</title>
+<style>
+  :root {
+    --bg: #F0F2F5;
+    --card: #FFFFFF;
+    --navy: #1E3A5F;
+    --gold: #F5A623;
+    --text: #334155;
+    --text-muted: #64748B;
+    --border: #E5E9F0;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0F1923;
+      --card: #16222F;
+      --navy: #E8EEF5;
+      --gold: #F5A623;
+      --text: #CBD5E1;
+      --text-muted: #8B9AAE;
+      --border: #26374A;
     }
-    h1 {
-      color: #1E3A5F;
-    }
-    h2 {
-      color: #1E3A5F;
-      margin-top: 30px;
-    }
-    a {
-      color: #1E3A5F;
-    }
-    .updated {
-      color: #666;
-      font-size: 0.95em;
-      margin-bottom: 30px;
-    }
-  </style>
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+  }
+  .header {
+    background: #1E3A5F;
+    padding: 40px 20px 56px;
+    text-align: center;
+  }
+  .header img {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    display: block;
+    margin: 0 auto 16px;
+  }
+  .header h1 {
+    color: #FFFFFF;
+    font-size: 24px;
+    margin: 0 0 8px;
+  }
+  .header p {
+    color: rgba(255,255,255,0.7);
+    font-size: 13px;
+    margin: 0;
+  }
+  .wrap {
+    max-width: 720px;
+    margin: -32px auto 60px;
+    padding: 0 16px;
+  }
+  .card {
+    background: var(--card);
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    padding: 32px;
+  }
+  .toc {
+    margin-bottom: 28px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+  }
+  .toc-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    margin: 0 0 12px;
+  }
+  .toc ol {
+    columns: 2;
+    padding-left: 18px;
+    margin: 0;
+    font-size: 13px;
+  }
+  .toc a {
+    color: var(--text);
+    text-decoration: none;
+  }
+  .toc a:hover { color: var(--gold); }
+  .toc li { margin-bottom: 6px; break-inside: avoid; }
+  section {
+    margin-bottom: 26px;
+    scroll-margin-top: 16px;
+  }
+  section h2 {
+    font-size: 16px;
+    color: var(--navy);
+    margin: 0 0 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  section h2 .num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+    background: var(--gold);
+    color: #1E3A5F;
+    font-size: 12px;
+    font-weight: 800;
+    flex-shrink: 0;
+  }
+  section p, section li {
+    font-size: 14.5px;
+    line-height: 1.65;
+    color: var(--text);
+  }
+  section ul {
+    margin: 8px 0;
+    padding-left: 20px;
+  }
+  a.inline { color: var(--navy); font-weight: 600; }
+  .badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    color: #1E3A5F;
+    background: var(--gold);
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-top: 10px;
+  }
+  footer {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 12px;
+    margin-top: 32px;
+  }
+</style>
 </head>
 <body>
 
-  <h1>Términos de Uso — OpoQuest</h1>
-  <p class="updated"><strong>Última actualización:</strong> junio de 2026</p>
+<div class="header">
+  <img src="https://otpbsxzulcweqwnoqdtw.supabase.co/storage/v1/object/public/Assets/loginv2.png" alt="OpoQuest">
+  <h1>Términos de Uso</h1>
+  <p>OpoQuest · Preparación para el Cuerpo General Administrativo (C1 AGE)</p>
+</div>
 
-  <h2>1. Identificación del servicio</h2>
-  <p>OpoQuest es una aplicación móvil de preparación para oposiciones al Cuerpo General Administrativo (C1 AGE), desarrollada y operada por OpoQuest · opoquest.app@gmail.com.</p>
+<div class="wrap">
+  <div class="card">
 
-  <h2>2. Aceptación de los términos</h2>
-  <p>Al registrarte y usar OpoQuest aceptas estos Términos de Uso. Si no estás de acuerdo con alguno de ellos, no utilices la aplicación.</p>
+    <div class="toc">
+      <p class="toc-title">Contenido</p>
+      <ol>
+        <li><a href="#s1">Identificación del servicio</a></li>
+        <li><a href="#s2">Aceptación de los términos</a></li>
+        <li><a href="#s3">Requisito de edad</a></li>
+        <li><a href="#s4">Uso permitido</a></li>
+        <li><a href="#s5">Cuenta de usuario</a></li>
+        <li><a href="#s6">Eliminación de cuenta</a></li>
+        <li><a href="#s7">Suscripción Premium</a></li>
+        <li><a href="#s8">Contenido de la app</a></li>
+        <li><a href="#s9">Propiedad intelectual</a></li>
+        <li><a href="#s10">Limitación de responsabilidad</a></li>
+        <li><a href="#s11">Modificaciones</a></li>
+        <li><a href="#s12">Legislación aplicable</a></li>
+        <li><a href="#s13">Contacto</a></li>
+      </ol>
+    </div>
 
-  <h2>3. Uso permitido</h2>
-  <p>OpoQuest está destinada exclusivamente al uso personal y no comercial para la preparación de oposiciones. Queda prohibido:</p>
-  <ul>
-    <li>Reproducir, distribuir o comercializar el contenido de la app sin autorización expresa.</li>
-    <li>Usar la app de forma que perjudique a otros usuarios o al servicio.</li>
-    <li>Intentar acceder a datos o funcionalidades no autorizadas.</li>
-  </ul>
+    <section id="s1">
+      <h2><span class="num">1</span>Identificación del servicio</h2>
+      <p>OpoQuest es una aplicación móvil de preparación para oposiciones al Cuerpo General Administrativo del Estado (C1 AGE), desarrollada y operada por OpoQuest · <a class="inline" href="mailto:opoquest.app@gmail.com">opoquest.app@gmail.com</a>.</p>
+    </section>
 
-  <h2>4. Cuenta de usuario</h2>
-  <p>Para usar OpoQuest debes crear una cuenta con una dirección de correo electrónico válida. Eres responsable de mantener la confidencialidad de tus credenciales y de toda la actividad que se realice desde tu cuenta.</p>
+    <section id="s2">
+      <h2><span class="num">2</span>Aceptación de los términos</h2>
+      <p>Al registrarte y usar OpoQuest aceptas estos Términos de Uso. Si no estás de acuerdo con alguno de ellos, no utilices la aplicación.</p>
+    </section>
 
-  <h2>5. Suscripción Premium</h2>
-  <p>OpoQuest ofrece un plan gratuito con funcionalidades limitadas y un plan Premium de pago. El plan Premium se gestiona a través de Google Play y se factura de forma recurrente (mensual o anual) según el plan elegido. Puedes cancelar tu suscripción en cualquier momento desde la configuración de tu cuenta de Google Play. No se realizan reembolsos por períodos ya facturados salvo lo dispuesto por la normativa aplicable.</p>
+    <section id="s3">
+      <h2><span class="num">3</span>Requisito de edad</h2>
+      <p>OpoQuest está dirigida a personas mayores de 16 años. Si eres menor de esa edad, necesitas el consentimiento de tu tutor legal para crear una cuenta.</p>
+    </section>
 
-  <h2>6. Contenido de la app</h2>
-  <p>El contenido de OpoQuest (preguntas, supuestos prácticos, temario y novedades legislativas) se elabora con fines orientativos para la preparación de oposiciones. OpoQuest no garantiza que dicho contenido esté actualizado en todo momento ni que refleje el temario oficial vigente en cada convocatoria. El usuario es responsable de contrastar la información con las fuentes oficiales.</p>
+    <section id="s4">
+      <h2><span class="num">4</span>Uso permitido</h2>
+      <p>OpoQuest está destinada exclusivamente al uso personal y no comercial para la preparación de oposiciones. Queda prohibido:</p>
+      <ul>
+        <li>Reproducir, distribuir o comercializar el contenido de la app sin autorización expresa.</li>
+        <li>Usar la app de forma que perjudique a otros usuarios o al servicio.</li>
+        <li>Intentar acceder a datos o funcionalidades no autorizadas.</li>
+      </ul>
+    </section>
 
-  <h2>7. Propiedad intelectual</h2>
-  <p>Todos los contenidos de OpoQuest (textos, diseño, imágenes, código) son propiedad de OpoQuest o de sus licenciantes. Queda prohibida su reproducción total o parcial sin autorización previa y por escrito.</p>
+    <section id="s5">
+      <h2><span class="num">5</span>Cuenta de usuario</h2>
+      <p>Puedes crear una cuenta con tu dirección de correo electrónico y una contraseña, o iniciar sesión con tu cuenta de Google. Eres responsable de mantener la confidencialidad de tus credenciales y de toda la actividad que se realice desde tu cuenta.</p>
+    </section>
 
-  <h2>8. Limitación de responsabilidad</h2>
-  <p>OpoQuest no se responsabiliza de los resultados obtenidos en procesos selectivos ni de las decisiones tomadas en base al contenido de la app. El servicio se presta "tal cual" y puede estar sujeto a interrupciones por mantenimiento o causas técnicas.</p>
+    <section id="s6">
+      <h2><span class="num">6</span>Eliminación de cuenta</h2>
+      <p>Puedes eliminar tu cuenta en cualquier momento desde la propia app (Perfil → Eliminar cuenta), sin necesidad de contactarnos. La eliminación es inmediata y borra de forma permanente tu perfil, progreso, respuestas y estadísticas.</p>
+    </section>
 
-  <h2>9. Modificaciones</h2>
-  <p>OpoQuest se reserva el derecho de modificar estos Términos de Uso en cualquier momento. Los cambios se comunicarán a través de la app o de la sección de Novedades. El uso continuado de la app tras la publicación de los cambios implica la aceptación de los nuevos términos.</p>
+    <section id="s7">
+      <h2><span class="num">7</span>Suscripción Premium</h2>
+      <p>OpoQuest ofrece un plan gratuito con funcionalidades limitadas y un plan Premium de pago. El plan Premium se gestiona a través de Google Play y se factura de forma recurrente (mensual o anual) según el plan elegido. Puedes cancelar tu suscripción en cualquier momento desde la configuración de tu cuenta de Google Play. No se realizan reembolsos por períodos ya facturados salvo lo dispuesto por la normativa aplicable.</p>
+    </section>
 
-  <h2>10. Legislación aplicable</h2>
-  <p>Estos términos se rigen por la legislación española. Para cualquier controversia, las partes se someten a los juzgados y tribunales del domicilio del usuario.</p>
+    <section id="s8">
+      <h2><span class="num">8</span>Contenido de la app</h2>
+      <p>El contenido de OpoQuest (preguntas, supuestos prácticos, temario y novedades legislativas) se elabora con fines orientativos para la preparación de oposiciones. OpoQuest no garantiza que dicho contenido esté actualizado en todo momento ni que refleje el temario oficial vigente en cada convocatoria. El usuario es responsable de contrastar la información con las fuentes oficiales.</p>
+    </section>
 
-  <h2>11. Contacto</h2>
-  <p>Para cualquier consulta relacionada con estos Términos de Uso puedes escribirnos a <a href="mailto:opoquest.app@gmail.com">opoquest.app@gmail.com</a>.</p>
+    <section id="s9">
+      <h2><span class="num">9</span>Propiedad intelectual</h2>
+      <p>Todos los contenidos de OpoQuest (textos, diseño, imágenes, código) son propiedad de OpoQuest o de sus licenciantes. Queda prohibida su reproducción total o parcial sin autorización previa y por escrito.</p>
+    </section>
+
+    <section id="s10">
+      <h2><span class="num">10</span>Limitación de responsabilidad</h2>
+      <p>OpoQuest no se responsabiliza de los resultados obtenidos en procesos selectivos ni de las decisiones tomadas en base al contenido de la app. El servicio se presta "tal cual" y puede estar sujeto a interrupciones por mantenimiento o causas técnicas.</p>
+    </section>
+
+    <section id="s11">
+      <h2><span class="num">11</span>Modificaciones</h2>
+      <p>OpoQuest se reserva el derecho de modificar estos Términos de Uso en cualquier momento. Los cambios se comunicarán a través de la app o de la sección de Novedades. El uso continuado de la app tras la publicación de los cambios implica la aceptación de los nuevos términos.</p>
+    </section>
+
+    <section id="s12">
+      <h2><span class="num">12</span>Legislación aplicable</h2>
+      <p>Estos términos se rigen por la legislación española. Para cualquier controversia, las partes se someten a los juzgados y tribunales del domicilio del usuario.</p>
+    </section>
+
+    <section id="s13">
+      <h2><span class="num">13</span>Contacto</h2>
+      <p>Para cualquier consulta relacionada con estos Términos de Uso puedes escribirnos a <a class="inline" href="mailto:opoquest.app@gmail.com">opoquest.app@gmail.com</a>.</p>
+      <span class="badge">Última actualización: 23 de julio de 2026</span>
+    </section>
+
+  </div>
+  <footer>© 2026 OpoQuest — Tu oposición. Tu misión.</footer>
+</div>
 
 </body>
 </html>
